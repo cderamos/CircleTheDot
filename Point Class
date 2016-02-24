@@ -1,3 +1,7 @@
+//Ok so Idk if I should initialize int x/y to something or just leave as is...so see if you could figure that out too.
+//Also, not sure what to do with the constructor, so...that too lol.
+
+
 
 public class Point {
 	
