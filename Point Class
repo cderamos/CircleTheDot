@@ -1,12 +1,10 @@
-//Ok so Idk if I should initialize int x/y to something or just leave as is...so see if you could figure that out too.
-//Also, not sure what to do with the constructor, so...that too lol.
-
+//ok nvm I fixed it, but if you catch anything,update it
 
 
 public class Point {
 	
-	private int x;
-	private int y;
+	private int xCoord;
+	private int yCoord;
 	
 	/**
 	 * Constructor
@@ -14,7 +12,8 @@ public class Point {
 	 * @param y, the y coordinate
 	 */
 	public Point (int x,int y){
-		
+		this.xCoord = x;
+		this.yCoord= y;
 	}
 	
 	/**
@@ -23,7 +22,7 @@ public class Point {
 	 */
 
 	public int getX(){
-		return x;
+		return xCoord;
 	}
 	
 	/**
@@ -32,7 +31,7 @@ public class Point {
 	 */
 	
 	public int getY(){
-		return y;
+		return yCoord;
 	}
 	
 	/**
@@ -42,8 +41,8 @@ public class Point {
 	 */
 	
 	public void reset (int x, int y){
-		this.x = x;
-		this.y = y;
+		this.xCoord = x;
+		this.yCoord = y;
 	}
 	
 }
