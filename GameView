@@ -1,0 +1,43 @@
+//Fix if needed
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+/**
+ * The class <b>GameView</b> provides the current view of the entire Game. It extends
+ * <b>JFrame</b> and lays out an instance of  <b>BoardView</b> (the actual game) and 
+ * two instances of JButton. The action listener for the buttons is the controller.
+ */
+
+public class GameView extends JFrame {
+	
+	BoardView x;
+	JButton button;
+	JFrame frame;
+	
+    /**
+     * Constructor used for initializing the Frame
+     * 
+     * @param model
+     *            the model of the game (already initialized)
+     * @param gameController
+     *            the controller
+     */
+    public GameView(GameModel model, GameController gameController) {
+    	frame = new JFrame("Assignment 2");
+    	this.x = new BoardView(model,gameController);
+    	button = new JButton("Reset");
+    	button = new JButton("Quit");
+
+    }
+   /**
+     * Getter method for the attribute board.
+     * 
+     * @return a reference to the BoardView instance
+     */
+
+    public BoardView getBoardView(){
+    	return x;
+		
+   }
+
+}
