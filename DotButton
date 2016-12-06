@@ -1,8 +1,10 @@
+import java.awt.Dimension;
 import javax.swing.*;
+import javax.swing.ImageIcon;
 import javax.swing.border.Border;
-import javax.imageio.ImageIO;
+import javax.swing.border.EmptyBorder;
 
-import java.awt.Color;
+
 
 /**
  * In the application <b>Circle the dot</b>, a <b>DotButton</b> is a specialized type of
@@ -19,10 +21,10 @@ import java.awt.Color;
  */
 
 public class DotButton extends JButton {
-	private int row,column,type;
-	ImageIcon greyDot = new ImageIcon(getClass().getResource("ball-0.png"));
-	ImageIcon orangeDot = new ImageIcon(getClass().getResource("ball-1.png"));
-	ImageIcon blueDot = new ImageIcon(getClass().getResource("ball-2.png"));
+	//Declare global private variables
+	private static int row;
+	private static int column;
+	private static int type;
 
     /**
      * Constructor used for initializing a cell of a specified type.
@@ -36,12 +38,30 @@ public class DotButton extends JButton {
      */
 
     public DotButton(int row, int column, int type) {
+    	//Initialize
     	this.row = row;
     	this.column = column;
     	this.type = type;
-    	Border emptyBorder = BorderFactory.createEmptyBorder(0, 0, 0, 0);
+    	//Initialize/Set new emptyBorder
+    	Border emptyBorder = BorderFactory.createEmptyBorder(0,0,0,0);
     	setBorder(emptyBorder);
     	setBorderPainted(false);
+    	
+    	if (type == 0){
+    		//If type = 0/Available, set button to display image of grey ball
+    		this.setIcon(new ImageIcon("src/images/ball-0.png"));
+    		
+    	}
+    	else if (type == 1){
+    		//If type = 1/Selected, set button to display image of orange ball
+    		this.setIcon(new ImageIcon("src/images/ball-1.png"));
+    		
+    	}
+    	else {
+    		//If type = 3/DOT, set button to display image of blue ball
+    		this.setIcon(new ImageIcon("src/images/ball-2.png"));
+    		
+    	}
     }
 
     /**
@@ -52,19 +72,25 @@ public class DotButton extends JButton {
      */
 
     public void setType(int type) {
+    	//This method sets the type of button (AVAILABLE,SELECTED,DOT) for each button on the board
     	this.type = type;
+    	Border emptyBorder = BorderFactory.createEmptyBorder(0,0,0,0);
+    	setBorder(emptyBorder);
+    	setBorderPainted(false);
+    	
+
     	if (type == 0){
-    		setIcon(new ImageIcon("greyDot"));
+    		this.setIcon(new ImageIcon("/data/ball-0.png"));
+    		
     	}
     	else if (type == 1){
-    		setIcon(new ImageIcon("orangeDot"));
+    		this.setIcon(new ImageIcon("/data/ball-1.png"));
     	}
     	else {
-    		setIcon(new ImageIcon("blueDot"));
+    		this.setIcon(new ImageIcon("/data/ball-2.png"));
+    		
     	}
     }
-
- 
     /**
      * Getter method for the attribute row.
      * 
@@ -72,9 +98,9 @@ public class DotButton extends JButton {
      */
 
     public int getRow() {
+    	//Return Row
     	return row;
     }
-
     /**
      * Getter method for the attribute column.
      * 
@@ -82,6 +108,8 @@ public class DotButton extends JButton {
      */
 
     public int getColumn() {
+    	//Return column
     	return column;
     }
+    
 }
