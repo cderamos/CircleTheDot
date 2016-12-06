@@ -1,8 +1,6 @@
 
-
-
 public class Point {
-	
+	//Declare global private variables
 	private int xCoord;
 	private int yCoord;
 	
@@ -12,16 +10,17 @@ public class Point {
 	 * @param y, the y coordinate
 	 */
 	public Point (int x,int y){
-		this.xCoord = x;
-		this.yCoord= y;
+		//Initialize
+		xCoord = x;
+		yCoord = y;
 	}
-	
 	/**
 	 * Getter method for the attribute x
 	 * @return the value of the attribute x
 	 */
 
 	public int getX(){
+		//Get x-coordinate
 		return xCoord;
 	}
 	
@@ -31,6 +30,7 @@ public class Point {
 	 */
 	
 	public int getY(){
+		//Get y-coordinate
 		return yCoord;
 	}
 	
@@ -41,8 +41,9 @@ public class Point {
 	 */
 	
 	public void reset (int x, int y){
-		this.xCoord = x;
-		this.yCoord = y;
+		//Reset x and y coordinates
+		xCoord = x;
+		yCoord = y;
 	}
 	
 }
